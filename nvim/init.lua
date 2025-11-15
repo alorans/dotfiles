@@ -63,6 +63,11 @@ require("lazy").setup({
 				style = "darker",
 			})
 			require("onedark").load()
+
+			-- Only apply if terminal doesn't support true colors
+			if not vim.env.COLORTERM then
+				vim.api.nvim_set_hl(0, "Visual", { bg = "#888888", fg = "#000000" })
+			end
 		end,
 	},
 
