@@ -1,0 +1,10 @@
+# Ignore everything in the fish directory besides config.fish
+fish/*
+!fish/config.fish
+
+# It's very important to ignore the gh directory, it has tokens in plain text.
+gh/
+
+# For now, there is no config for these tools, so ignore them.
+lazygit/
+asm-lsp/
