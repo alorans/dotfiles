@@ -17,7 +17,13 @@ if test (uname) = Darwin
     # rm just moves to trash
     function rm
         for i in $argv
-            mv -f $i ~/.Trash
+            switch $i
+                case '-*'
+                    # Ignore options like -rf
+                    continue
+                case '*'
+                    mv -f $i ~/.Trash
+            end
         end
     end
     
