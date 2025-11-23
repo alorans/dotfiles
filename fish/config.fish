@@ -1,6 +1,9 @@
 # No fish greeting
 set -g fish_greeting
 
+# VI key bindings
+set -g fish_key_bindings fish_vi_key_bindings
+
 # Multicd utility command from fish documentation
 function multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
