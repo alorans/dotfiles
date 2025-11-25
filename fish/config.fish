@@ -25,11 +25,16 @@ if test (uname) = Darwin
                     # Ignore options like -rf
                     continue
                 case '*'
+                    # mv -f still gives an error when moving a directory with a name that is already in trash
+                    /bin/rm -rf ~/.Trash/$i 2>/dev/null # silence errors
                     mv -f $i ~/.Trash
             end
         end
-    end
-    
+    end 
+
+    # Start jack audio server with no input channels for mocp
+    abbr --add jack "jackd -d coreaudio -i 0 &"
+
     # Toggle system-wide dark mode
     function dark
         osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
