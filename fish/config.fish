@@ -2,7 +2,8 @@
 set -g fish_greeting
 
 # VI key bindings
-set -g fish_key_bindings fish_vi_key_bindings
+# set -g fish_key_bindings fish_vi_key_bindings
+set -g fish_key_bindings fish_default_key_bindings
 
 # Multicd utility command from fish documentation
 function multicd
