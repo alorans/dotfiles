@@ -21,15 +21,9 @@ if test (uname) = Darwin
     # rm just moves to trash
     function rm
         for i in $argv
-            switch $i
-                case '-*'
-                    # Ignore options like -rf
-                    continue
-                case '*'
-                    # mv -f still gives an error when moving a directory with a name that is already in trash
-                    /bin/rm -rf ~/.Trash/$i 2>/dev/null # silence errors
-                    mv -f $i ~/.Trash
-            end
+            # mv -f still gives an error when moving a directory with a name that is already in trash
+            /bin/rm -rf -- "~/.Trash/$i" 2>/dev/null # silence errors
+            mv -f -- "$i" ~/.Trash
         end
     end 
 
