@@ -51,6 +51,10 @@ vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 -- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostic in float" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+-- Buffers
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', { silent = true })
+vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', { silent = true })
+vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { silent = true })
 
 -- Plugin specifications
 require("lazy").setup({
