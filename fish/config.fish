@@ -11,6 +11,12 @@ function multicd
 end
 abbr --add dotdot --regex '^\.\.+$' --function multicd
 
+# Make a note with the format "year-month-day hour-minute-second.txt"
+function note
+    set filename (date "+%Y-%m-%d %H-%M-%S.txt")
+    nvim "$filename"
+end
+
 # Make directory and cd combined command (should be built-in imo)
 function md
     mkdir $argv[1] && cd $argv[1]
