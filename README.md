@@ -1,4 +1,4 @@
-These dotfiles should work on Linux and Mac.
+This config should work on Linux and Mac.
 
 For example, here's how I would install it on Debian:
 ```sh
